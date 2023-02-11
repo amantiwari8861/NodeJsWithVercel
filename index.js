@@ -11,7 +11,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    
+
     const fs2=require("fs");
     const data=require("./JSquestions.json");
     console.log(fs2);
@@ -29,3 +29,5 @@ app.get('/contact', (req, res) => res.send('Contact Page Route'));
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
+
+module.exports=app
