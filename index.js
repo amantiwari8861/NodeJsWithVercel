@@ -9,6 +9,7 @@
 const express = require('express');
 
 const app = express();
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 
@@ -16,8 +17,8 @@ app.get('/', (req, res) => {
     const data=require("./JSquestions.json");
     console.log(fs2);
     console.log(data);
-
-    res.send('Home Page Route')
+    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    // res.send('Home Page Route')
 });
 
 app.get('/about', (req, res) => res.send('About Page Route'));
