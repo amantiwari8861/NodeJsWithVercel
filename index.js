@@ -12,15 +12,15 @@ const app = express();
 // app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    const fs2=require("fs");
-    const data=require("./JSquestions.json");
+    const fs2 = require("fs");
+    const data = require("./JSquestions.json");
     console.log(fs2);
     console.log(data);
     // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
     res.send('Home Page Route')
 });
-app.get("/allobjects",(req,res)=>{
-    res.setHeader("content-type","text/json");
+app.get("/allobjects", (req, res) => {
+    res.setHeader("content-type", "text/json");
     res.send(JSON.stringify(data));
 });
 app.get('/about', (req, res) => res.send('About Page Route'));
@@ -33,4 +33,4 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
 
-module.exports=app
+module.exports = app
