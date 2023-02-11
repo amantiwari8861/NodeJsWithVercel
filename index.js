@@ -9,11 +9,11 @@
 const express = require('express');
 
 const app = express();
+const data = require("./JSquestions.json");
 // app.use(express.static('public'))
 app.use(express.json());
 app.get('/', (req, res) => {
     const fs2 = require("fs");
-    const data = require("./JSquestions.json");
     console.log(fs2);
     console.log(data);
     // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
