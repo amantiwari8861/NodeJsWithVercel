@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     console.log(fs2);
     console.log(data);
     // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-    res.send('Home Page Route'+data)
+    res.send('Home Page Route'+JSON.stringify(data))
 });
 
 app.get('/about', (req, res) => res.send('About Page Route'));
