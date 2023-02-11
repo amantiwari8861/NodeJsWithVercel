@@ -6,46 +6,28 @@
 
 //do not use "type": "module" in package.json while using require
 
-// const express = require('express');
+const express = require('express');
 
-// const app = express();
-// app.use(express.static('public'))
+const app = express();
+app.use(express.static('public'))
 
-// app.get('/', (req, res) => {
-//     const fs2=require("fs");
-//     const data=require("./JSquestions.json");
-//     console.log(fs2);
-//     console.log(data);
-//     // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-//     res.send('Home Page Route')
-// });
-
-// app.get('/about', (req, res) => res.send('About Page Route'));
-
-// app.get('/portfolio', (req, res) => res.send('Portfolio Page Route'));
-
-// app.get('/contact', (req, res) => res.send('Contact Page Route'));
-
-// const port = process.env.PORT || 3000;
-
-// app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
-
-// module.exports=app
-
-//vercel-docs
-const app = require('express')();
-const { v4 } = require('uuid');
-
-app.get('/api', (req, res) => {
-  const path = `/api/item/${v4()}`;
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+app.get('/', (req, res) => {
+    const fs2=require("fs");
+    const data=require("./JSquestions.json");
+    console.log(fs2);
+    console.log(data);
+    // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    res.send('Home Page Route'+data)
 });
 
-app.get('/api/item/:slug', (req, res) => {
-  const { slug } = req.params;
-  res.end(`Item: ${slug}`);
-});
+app.get('/about', (req, res) => res.send('About Page Route'));
 
-module.exports = app;
+app.get('/portfolio', (req, res) => res.send('Portfolio Page Route'));
+
+app.get('/contact', (req, res) => res.send('Contact Page Route'));
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
+
+module.exports=app

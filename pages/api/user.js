@@ -4,18 +4,4 @@ export default function handler(req, res) {
     res.json({ name: 'John Doe' });
   }  
 
-  /* {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
-} */
+  
