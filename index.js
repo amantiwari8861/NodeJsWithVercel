@@ -17,9 +17,12 @@ app.get('/', (req, res) => {
     console.log(fs2);
     console.log(data);
     // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-    res.send('Home Page Route'+JSON.stringify(data))
+    res.send('Home Page Route')
 });
-
+app.get("/allobjects",(req,res)=>{
+    res.setHeader("content-type","text/json");
+    res.send(JSON.stringify(data));
+});
 app.get('/about', (req, res) => res.send('About Page Route'));
 
 app.get('/portfolio', (req, res) => res.send('Portfolio Page Route'));
