@@ -5,16 +5,20 @@
 
 
 //do not use "type": "module" in package.json while using require
-const fs2=require("fs");
-const data=require("./JSquestions.json");
-console.log(fs2);
-console.log(data);
 
 const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => res.send('Home Page Route'));
+app.get('/', (req, res) => {
+    
+    const fs2=require("fs");
+    const data=require("./JSquestions.json");
+    console.log(fs2);
+    console.log(data);
+
+    res.send('Home Page Route')
+});
 
 app.get('/about', (req, res) => res.send('About Page Route'));
 
