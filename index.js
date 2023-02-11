@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     res.send('Home Page Route')
 });
 app.get("/allobjects", (req, res) => {
-    res.setHeader("content-type", "text/json");
+    res.setHeader("Content-Type", "text/json");
     res.send(JSON.stringify(data));
 });
 app.get('/about', (req, res) => res.send('About Page Route'));
